@@ -2,11 +2,11 @@
 
 ## Create a VPC with an App. LoadBalancer connected to 2 Public EC2 in a diff AZs with Nginx Configured as a proxy to pass traffic to an internal facing Network LB connected to 2 Private EC2s with a web app on them.
 
-#### 4 EC2s
+### 4 EC2s
 
  ![Screenshot from 2023-01-07 12-12-13](https://user-images.githubusercontent.com/103090890/211149472-d5745f12-1cd9-4dc4-9868-5581fe213ad6.png)
 
-#### ALB and NLB
+### ALB and NLB
 
  ![Screenshot from 2023-01-07 12-12-42](https://user-images.githubusercontent.com/103090890/211149494-a45fd1c3-a3ef-4d47-9c4d-75432a1a4068.png)
 
@@ -15,35 +15,35 @@
 
 ![Screenshot from 2023-01-07 12-13-12](https://user-images.githubusercontent.com/103090890/211149530-2f5a8d9a-396c-4bc1-b8c5-4673be166ba6.png)
 
-#### Health Status of Target Groups
+### Health Status of Target Groups
 
 ![Screenshot from 2023-01-07 12-13-24](https://user-images.githubusercontent.com/103090890/211149547-e5f8655b-7119-4981-b417-c077a6ef8d28.png)
 ![Screenshot from 2023-01-07 12-13-35](https://user-images.githubusercontent.com/103090890/211149550-4c6ebe8e-365d-4e91-8e8a-7230ee65b8a9.png)
 
-#### Subnets
+### Subnets
 
 ![Screenshot from 2023-01-07 12-15-11](https://user-images.githubusercontent.com/103090890/211149570-a3269eb6-9d3c-4933-ba5e-0bffe7fae724.png)
 ![Screenshot from 2023-01-07 12-15-19](https://user-images.githubusercontent.com/103090890/211149575-de43c539-a8bc-4589-b745-eb0d133c0ad9.png)
 
 ![Screenshot from 2023-01-07 12-15-25](https://user-images.githubusercontent.com/103090890/211149583-211c56de-52c1-4463-95c9-8aa9bce63532.png)
 
-#### NAT gateway to connect the private subnets to the internet
+### NAT gateway to connect the private subnets to the internet
 ![Screenshot from 2023-01-07 12-15-36](https://user-images.githubusercontent.com/103090890/211149587-3ab149ad-59c2-4083-9de0-cab7c305ce51.png)
 
-#### EC2s acting as reverse proxies
+### EC2s acting as reverse proxies
 
 ![Screenshot from 2023-01-05 15-30-56](https://user-images.githubusercontent.com/103090890/211149998-b029c9d8-0937-45c4-92f6-d373a43fb920.png)
 ![Screenshot from 2023-01-05 15-42-47](https://user-images.githubusercontent.com/103090890/211150000-2bed87bc-609a-4839-95d7-4e1ee12c6fac.png)
 
 
-#### User data of Private EC2s
+### User data of Private EC2s
 
 
 ![Screenshot from 2023-01-07 12-49-33](https://user-images.githubusercontent.com/103090890/211149920-da07a1b3-b230-4e9f-8df2-202382aef05a.png)
 
 
 
-#### Output 
+### Output 
 
 ![Screenshot from 2023-01-07 12-11-35](https://user-images.githubusercontent.com/103090890/211150006-cdeafdfa-dd9e-4bd2-ba8f-101e1adb42d0.png)
 
@@ -51,7 +51,7 @@
 
 ## Use the Previous Infrastructure and add Auto Scaling Group to the Private subnets that hosts the app
 
-#### ASG Policy
+### ASG Policy
 
 
 ![Screenshot from 2023-01-07 12-50-59](https://user-images.githubusercontent.com/103090890/211150066-34a3b28c-985f-4ea5-860d-8f99fb8ca53e.png)
@@ -61,14 +61,14 @@
 
 
 ![Screenshot from 2023-01-07 12-53-46](https://user-images.githubusercontent.com/103090890/211150083-53eaa730-d67c-4fac-a0bb-a94e11036980.png)
-#### Health Status 
+### Health Status 
 
 ![Screenshot from 2023-01-07 12-59-46](https://user-images.githubusercontent.com/103090890/211150087-9dcf8285-5c34-4004-9946-b223e3bb6398.jpg)
 
 
 
 ## (Bonus) terraform file to create a vpc and subnets
-```JSON
+```HashiCorp
 # Create VPC
 resource "aws_vpc" "example" {
   cidr_block       = "10.0.0.0/16"
